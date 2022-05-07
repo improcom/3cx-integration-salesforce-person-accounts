@@ -5,12 +5,11 @@ This is customized version of the template "SalesforceV2" from 3CX v18.0 with th
 From here: [3cx manual Salesforce CRM Integration - Server Side](https://www.3cx.com/docs/salesforce-crm-integration)  
 `- Salesforce accounts with Person Accounts enabled are not supported`
 
-
 ### Disclaimer: it was tested ONLY for journaling of outgoing calls.
-
+---
 ## Install
 
-Use "salesforce_template_w_person_accounts.xml" for production.
+Use "salesforce_template_w_person_accounts.xml" for production.  
 Use "salesforce_template_w_person_accounts_sandbox.xml" for sandbox testing.
 
 How to setup - [read here](https://www.3cx.com/docs/salesforce-crm-integration) 
