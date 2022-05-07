@@ -6,7 +6,7 @@
     <Parameter Name="LookupOrder" Type="List" Parent="General Configuration" Editor="String" Title="Contact Lookup Order:" Default="Contacts/Leads/Accounts" ListValues="Contacts/Leads/Accounts,Contacts/Accounts/Leads,Leads/Accounts/Contacts,Leads/Contacts/Accounts,Accounts/Contacts/Leads,Accounts/Leads/Contacts" />
     <Parameter Name="ClientId" Type="String" Parent="General Configuration" Editor="String" Title="Consumer Key:" />
     <Parameter Name="ClientSecret" Type="String" Parent="General Configuration" Editor="String" Title="Consumer Secret:" />
-    <Parameter Name="RefreshToken" Type="OAuth" Parent="General Configuration" Editor="String" Title="Refresh Token:" RequestUrl="https://test.salesforce.com/services/oauth2/authorize" RequestUrlParameters="response_type=code&amp;client_id=[ClientId]&amp;redirect_uri=[RedirectUri]&amp;state=[State]" ResponseScenario="OAuthGetAccessToken" />
+    <Parameter Name="RefreshToken" Type="OAuth" Parent="General Configuration" Editor="String" Title="Refresh Token:" RequestUrl="https://login.salesforce.com/services/oauth2/authorize" RequestUrlParameters="response_type=code&amp;client_id=[ClientId]&amp;redirect_uri=[RedirectUri]&amp;state=[State]" ResponseScenario="OAuthGetAccessToken" />
     <Parameter Name="ReportCallEnabled" Type="Boolean" Editor="String" Title="Enable Call Journaling" Default="False" />
     <Parameter Name="Subject" Type="String" Parent="ReportCallEnabled" Editor="String" Title="Call Subject:" Default="3CX PhoneSystem Call" />
     <Parameter Name="InboundCallText" Type="String" Parent="ReportCallEnabled" Editor="String" Title="Answered Inbound Call:" Default="[DateTime]: Answered incoming call from [Number] [Name] to [Agent] ([Duration])" />
@@ -27,7 +27,7 @@
   </Authentication>
   <Scenarios>
     <Scenario Id="Auth" Type="REST">
-      <Request Url="https://test.salesforce.com/services/oauth2/token" MessagePasses="0" RequestEncoding="UrlEncoded" RequestType="Post" ResponseType="Json">
+      <Request Url="https://login.salesforce.com/services/oauth2/token" MessagePasses="0" RequestEncoding="UrlEncoded" RequestType="Post" ResponseType="Json">
         <PostValues>
           <Value Key="grant_type" Passes="0" Type="String">refresh_token</Value>
           <Value Key="refresh_token" Passes="0" Type="String">[RefreshToken]</Value>
@@ -47,7 +47,7 @@
       </Outputs>
     </Scenario>
     <Scenario Id="OAuthGetAccessToken" Type="REST">
-      <Request Url="https://test.salesforce.com/services/oauth2/token" MessagePasses="0" RequestEncoding="UrlEncoded" RequestType="Post" ResponseType="Json">
+      <Request Url="https://login.salesforce.com/services/oauth2/token" MessagePasses="0" RequestEncoding="UrlEncoded" RequestType="Post" ResponseType="Json">
         <PostValues>
           <Value Key="code" Passes="0" Type="String">[code]</Value>
           <Value Key="grant_type" Passes="0" Type="String">authorization_code</Value>
