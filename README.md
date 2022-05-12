@@ -11,6 +11,7 @@ From here: [3cx manual Salesforce CRM Integration - Server Side](https://www.3cx
 
 Use "salesforce_template_w_person_accounts.xml" for production.  
 Use "salesforce_template_w_person_accounts_sandbox.xml" for sandbox testing.
+Use "salesforce_template_w_person_accounts_custom.xml" for production without extra SF fields: "AssistantPhone", "HomePhone","OtherPhone"
 
 How to setup - [read here](https://www.3cx.com/docs/salesforce-crm-integration) 
 
