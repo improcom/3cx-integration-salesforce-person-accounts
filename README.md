@@ -50,3 +50,7 @@ Client Authentication: Send client credentials in body
 
 Press "Get New Access Token".  
 If everything is ok you should get a window with the token info. Press "Use Token". Copy "instance_url" and update the "_endpoint" Variable (tab 4) to it. This endpoint will be used for all requests.
+
+#Troubelshooting
+https://www.3cx.com/community/threads/how-to-check-the-crm-integration-call-log.81728/  
+You need to enable verbose logs from the 3CX Console > Dashboard > Activity Log > Settings. Then get the 3cxSystemService.log file from the 3CX Console > Dashboard > Activity Log > Logs button > Instance folder.
